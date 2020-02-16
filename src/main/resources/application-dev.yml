@@ -32,3 +32,10 @@ management:
       exposure:
         include: refresh,health,info
 
+
+feign:
+  okhttp:
+    enabled: true
+  httpclient:
+    enabled: false
+
