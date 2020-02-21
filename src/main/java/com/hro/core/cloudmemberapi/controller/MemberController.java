@@ -1,9 +1,8 @@
 package com.hro.core.cloudmemberapi.controller;
 
-import com.hro.core.cloudmemberapi.feign.VerifyApiFeign;
+import com.hro.core.cloudmemberapi.feign.VerifyApiClient;
 import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
 import com.netflix.hystrix.contrib.javanica.annotation.HystrixProperty;
-import com.netflix.ribbon.proxy.annotation.Hystrix;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,7 +19,7 @@ public class MemberController extends BaseController{
     RestTemplate restTemplate;
 
     @Autowired
-    VerifyApiFeign verifyApiFeign;
+    VerifyApiClient verifyApiFeign;
 
     @HystrixCommand(fallbackMethod = "testCallBack",
             commandProperties = @HystrixProperty(
