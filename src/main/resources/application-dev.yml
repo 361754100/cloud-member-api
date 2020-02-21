@@ -40,4 +40,12 @@ feign:
     enabled: false
   hystrix:
     enabled: true
+turbine:
+# 配置需要聚合的服务名称
+  app-config: member-api
+# Turbine需要聚合的集群名称
+  aggregator:
+    cluster-config: default
+# 集群名表达式
+  cluster-name-expression: new String("default")
 
